@@ -6,6 +6,5 @@ public class Introduction {
     }
     public  static <T1,T2> void printMethod(T1 a,T2 b){
         System.out.println("a "+a+" b "+b);
-    }
-    // Adding new code !
+    }//Remove add comment
 }
