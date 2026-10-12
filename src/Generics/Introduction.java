@@ -12,6 +12,11 @@ public class Introduction {
       emp2.setEmp(sumitRef);
     }
 }
+
+/**
+ * Class->Calculator
+ *      sum -->generic sum function!
+ */
 class Employee<T>{
     private T emp;
 
