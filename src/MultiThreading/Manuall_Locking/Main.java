@@ -36,7 +36,8 @@ class Resource{
     }
 
     public void addItem()  {
-        lockRef.lock();
+//        lockRef.lock();
+
         try{
             System.out.println(Thread.currentThread().getName()+" enter in AddItem");
             this.item++;
