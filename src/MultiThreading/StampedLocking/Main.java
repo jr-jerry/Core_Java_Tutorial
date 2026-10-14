@@ -8,6 +8,7 @@ public class Main {
         Thread thread0=new Thread(()->{
             resource.updateCount();
         });
+
         Thread thread1=new Thread(()->{
             resource.updateCount();
         });

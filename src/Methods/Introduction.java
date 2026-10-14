@@ -11,6 +11,9 @@ public class Introduction {
         System.out.println("m1: "+res1+" m2: "+res2+" m3: "+res3+" m4: "+res4);
 
     }
+    public void method(){
+        System.out.println("Instance method called ");
+    }
     public static int m1(){
         return 5;
     }
