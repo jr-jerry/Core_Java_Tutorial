@@ -6,8 +6,8 @@ public class Class3 {
         Box<Double> box3=new Box<Double>(12.21);
         Box<Float> box4=new Box<Float>(12.2f);
 
-        Box<String> box2=new Box<String>("Hello");
-        Box<Boolean> box5=new Box<Boolean>(true);
+//        Box<String> box2=new Box<String>("Hello");
+//        Box<Boolean> box5=new Box<Boolean>(true);
     }
 }
 //UpperBound Generic
