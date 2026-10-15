@@ -6,15 +6,16 @@ public class Main {
     static void main(String[] args) throws InterruptedException {
         Resource resource=new Resource();
 
-        Thread read1=new Thread(()->{resource.readCount();});
-        read1.setName("read1");
+        Thread readThread=new Thread(()->{resource.readCount();});
+        readThread.setName("readThread");
 
-        Thread thread0=new Thread(()->{
+        Thread writeThread=new Thread(()->{
             resource.updateCount();
         });
+        writeThread.setName("writeThread");
 
-        read1.start();
-        thread0.start();
+        readThread.start();
+//        writeThread.start();
 
         System.out.println(resource.getCount());
     }
