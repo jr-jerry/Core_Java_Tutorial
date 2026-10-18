@@ -12,15 +12,12 @@ public class AtomicReferenceClass {
 
 
         });
-
         Thread sumit_thread_2=new Thread(()->{
 
                 boolean seat_status=bookMyShow.BookSeat("sumit");
                 System.out.println("sumit_thread_2 is seat status "+seat_status);
 
-
         });
-
         sumit_thread_2.start();
         amit_thread_1.start();
         amit_thread_1.join();
