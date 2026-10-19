@@ -10,8 +10,6 @@ public class Practise_Static {
         c1.increase();
 
         System.out.println("c2: "+c2.getCount()+" c1: "+c1.getCount() );
-
-
     }
 }
 class CounterApp{
