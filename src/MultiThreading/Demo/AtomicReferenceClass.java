@@ -1,10 +1,13 @@
 package MultiThreading.Demo;
 
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.atomic.AtomicReferenceArray;
 
 public class AtomicReferenceClass {
     static void main(String[] args) throws InterruptedException {
-        BookMyShowConcurrency bookMyShow = new BookMyShowConcurrency();
+        BookMyShowConcurrencyArray bookMyShow = new BookMyShowConcurrencyArray();
+
         Thread amit_thread_1=new Thread(()->{
 
                 boolean seat_status=bookMyShow.BookSeat("amit");
@@ -18,10 +21,22 @@ public class AtomicReferenceClass {
                 System.out.println("sumit_thread_2 is seat status "+seat_status);
 
         });
+        Thread gautam_thread_2=new Thread(()->{
+
+            boolean seat_status=bookMyShow.BookSeat("gautam ");
+            System.out.println("gautam_thread_2 is seat status "+seat_status);
+
+        });
+        amit_thread_1.setName("amit");
+        sumit_thread_2.setName("sumit");
+        gautam_thread_2.setName("gautam");
         sumit_thread_2.start();
         amit_thread_1.start();
+        gautam_thread_2.start();
+
         amit_thread_1.join();
         sumit_thread_2.join();
+        gautam_thread_2.join();
 
     }
 }
@@ -58,5 +73,26 @@ class BookMyShowConcurrency{
             return false;
         }
         return seat.compareAndSet("EMPTY",personName);
+    }
+}
+class BookMyShowConcurrencyArray{
+    AtomicInteger nextSeat;
+    AtomicReferenceArray<String> seats;
+
+    public BookMyShowConcurrencyArray(){
+        seats=new AtomicReferenceArray<>(10);
+        nextSeat=new AtomicInteger(0);
+    }
+
+    public boolean BookSeat(String personName){
+        while(true){
+            int current_free_seat=nextSeat.get();
+           if(nextSeat.compareAndSet(current_free_seat,current_free_seat+1)){
+               seats.compareAndSet(current_free_seat,null,personName);
+               System.out.println(Thread.currentThread().getName()+" occupy seat : "+current_free_seat);
+               return true;
+           }
+            System.out.println(Thread.currentThread().getName()+" now try for seat :"+(current_free_seat+1));
+        }
     }
 }
