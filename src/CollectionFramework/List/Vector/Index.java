@@ -19,7 +19,7 @@ public class Index {
         });
         thread0.start();
         thread1.start();
-        //main thread please wait unitll thread0 complete its task
+
         thread0.join();
         thread1.join();
 
