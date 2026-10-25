@@ -6,7 +6,9 @@ public class ArrayIntroduction {
     static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
 
+        System.out.println("Enter size of row you want ");
         int row=sc.nextInt();
+        System.out.println("Enter size of column you want ");
         int col=sc.nextInt();
 
         int[][] Arr=new int[row][col];
