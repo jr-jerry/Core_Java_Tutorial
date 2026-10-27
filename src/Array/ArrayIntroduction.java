@@ -19,10 +19,9 @@ public class ArrayIntroduction {
                 Arr[i][j]=sc.nextInt();
            }
        }
-
-
         for(int r=0;r<row;r++){
             for(int c = 0; c <col; c++){
+                if(r==c)
                 System.out.print(Arr[r][c]+", ");
             }
             System.out.println();
