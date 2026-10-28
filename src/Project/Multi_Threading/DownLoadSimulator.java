@@ -6,13 +6,35 @@ public class DownLoadSimulator {
         thread1.start();
         Thread thread2=new Thread(new SongTask());
         thread2.start();
-
-//        Thread thread2=new Thread(new Download());
-//        thread2.start();
+        Thread thread3=new Thread(new GameTask());
+        thread3.start();
 
         thread1.join();
         thread2.join();
-//        thread2.join();
+        thread3.join();
+        System.out.println("All Downlaod Complete ");
+    }
+}
+class GameTask implements Runnable{
+    @Override
+    public void run() {
+        System.out.println("\nGame  download start");
+        int progress=0;
+        int currentProgress=0;
+        for(int i=1;i<=25;i++){
+            currentProgress=progress+currentProgress;
+            System.out.println("Game Progress::::::::::::::::::::: "+currentProgress);
+
+            try {
+                Thread.sleep(1000);
+                progress=4;
+
+
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        System.out.println("Game  download end");
     }
 }
 class MovieTask implements Runnable{
@@ -23,7 +45,7 @@ class MovieTask implements Runnable{
         int currentProgress=0;
             for(int i=1;i<=10;i++){
                 currentProgress=progress+currentProgress;
-                System.out.println("Movie progress : "+currentProgress);
+                System.out.println("Movie progress ------------------> : "+currentProgress);
 
                 try {
                     Thread.sleep(1000);
@@ -45,7 +67,7 @@ class SongTask implements Runnable{
         int currentProgress=0;
         for(int i=1;i<=2;i++){
             currentProgress=progress+currentProgress;
-            System.out.println("Song progress : "+currentProgress);
+            System.out.println("Song progress =================== "+currentProgress);
 
             try {
                 Thread.sleep(1000);
