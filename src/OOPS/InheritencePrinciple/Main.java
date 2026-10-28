@@ -7,7 +7,7 @@ public class Main {
     }
 }
 class Parent{
-     String gold;
+    String gold;
     public Parent(){
         gold="0";
         System.out.println("Parent Constructor call");
@@ -26,4 +26,7 @@ class Child extends Parent {
     public void setSilver(String silver){
         this.silver = silver;
     }
+}
+class GrandChild extends Child{
+
 }
