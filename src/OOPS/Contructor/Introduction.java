@@ -4,32 +4,42 @@ import java.util.Scanner;
 
 public class Introduction {
     static void main(String[] args) {
-        User userAmanObj_Ref=new User("Aman",24);
-        User userAmanCopyObj_Ref=new User(userAmanObj_Ref);
-
-        System.out.println("Copy: Object properties  age "+userAmanCopyObj_Ref.age+" name "+userAmanCopyObj_Ref.name);
+        User user=new User();
+        System.out.println("User name "+user.getName()+" user age "+user.getAge());
     }
 }
 class User{
-    String name;
-    int age;
-    public User(String name,int age){
-        this.name=name;
-        this.age=age;
+    private String name;
+
+    public String getName() {
+        return name;
     }
-    public User(User prevObj){
-        this.name=prevObj.name;
-        this.age=prevObj.age;
+
+    public void setName(String name) {
+        this.name = name;
     }
+
+    public char getGender() {
+        return gender;
+    }
+
+    public void setGender(char gender) {
+        this.gender = gender;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+    private int age;
+    private char gender;
+    //Default Constructor!
     public User(){
-        System.out.println("Default constructor called ! ");
-        name=null;
+        this.name="";
+        this.age=0;
+        this.gender='M';
     }
 }
-/**
- * Class-->Employee
- * Field-->empName,empSalary,empYOE
- * Methods-->Params Constructor,Copy Constructor !
- *
- * Object-> Gautam,Naman, CopyNaman
- */

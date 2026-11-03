@@ -83,7 +83,6 @@ class BookMyShowConcurrencyArray{
         seats=new AtomicReferenceArray<>(10);
         nextSeat=new AtomicInteger(0);
     }
-
     public boolean BookSeat(String personName){
         while(true){
             int current_free_seat=nextSeat.get();
