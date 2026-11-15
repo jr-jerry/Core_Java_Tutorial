@@ -2,31 +2,26 @@ package OOPS.InheritencePrinciple;
 
 public class Main {
     static void main() {
-        Child child = new Child( );
-        child.car();
+        PaymentType paymentType=new CreditCard();
+        paymentType.pay();
     }
 }
-class Parent{
-    String gold;
-    public Parent(){
-        gold="0";
-        System.out.println("Parent Constructor call");
-    }
-    public void car(){
-        System.out.println("Parent car start");
+class PaymentType {
+    public void pay(){
+        System.out.println("Pay via cash");
     }
 }
-class Child extends Parent {
-    public Child(){
-        super();
-        System.out.println("Child Constructor call");
-        this.silver="0";
-    }
-    private String silver;
-    public void setSilver(String silver){
-        this.silver = silver;
-    }
-}
-class GrandChild extends Child{
 
+class CreditCard extends PaymentType{
+    @Override
+    public void pay() {
+        System.out.println("Credit card pay");
+    }
+}
+
+class NetBanking extends PaymentType{
+    @Override
+    public void pay() {
+        System.out.println("Net banking pay");
+    }
 }
