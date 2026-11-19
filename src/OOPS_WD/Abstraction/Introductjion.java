@@ -5,8 +5,8 @@ import java.util.Map;
 
 public class Introductjion {
     static void main() {
-        Map<String,String> map=new HashMap<>();
-        map.put("key","value");
+        Demo demoObjRef=new DemoChild();
+        DemoChild.normalMethod();
     }
 }
 

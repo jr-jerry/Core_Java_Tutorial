@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="UltimateRestEnvService">
+    <option name="globalEnv">
+      <RestEnv>
+        <option name="id" value="038dba67-1ba8-4083-b1d3-3efbde5809fd" />
+        <option name="name" value="Globals" />
+      </RestEnv>
+    </option>
+  </component>
+</project>
