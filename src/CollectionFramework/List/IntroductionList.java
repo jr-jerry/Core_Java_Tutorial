@@ -4,17 +4,18 @@ import java.util.*;
 
 public class IntroductionList {
     static void main(String[] args) {
-//        take 5 input from user
-        Collection<Integer> collectionImpl=new HashSet<Integer>();
-        collectionImpl.add(1);
-        collectionImpl.add(2);
-        collectionImpl.add(3);
-        collectionImpl.add(4);
-        collectionImpl.add(5);
-        Scanner sc = new Scanner(System.in);
+        Queue<Integer> queue=new LinkedList<>();
+        queue.add(10);
+        queue.add(20);
+        queue.add(30);
 
-        List<Integer> alreadyExistList=new ArrayList<Integer>(collectionImpl);
-        System.out.println(alreadyExistList);
+        queue.element();
+
+        queue.offer(5);//enueue
+        queue.remove(5);
+        queue.poll();
+
+        System.out.println(queue);
 
     }
 }

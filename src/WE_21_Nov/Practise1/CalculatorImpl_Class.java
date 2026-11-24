@@ -9,8 +9,8 @@ public class CalculatorImpl_Class implements CalculatorInterf {
     public void anotherMethod() {
         System.out.println("Default implementation by CalculatorImpl");
     }
-    @Override
-    public void antherMethod2(){
-        System.out.println("static method impl by CalculatorImpl");
-    }
+//    @Override
+//    public void antherMethod2(){
+//        System.out.println("static method impl by CalculatorImpl");
+//    }
 }
